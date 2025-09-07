@@ -23,14 +23,16 @@
         <div class="logo">
             <img src="images/myLogo1.png" alt="">
         </div>
-        <ul class="nav-items">
+        <ul class="nav-items" id="navItems">
             <li class="nav-links"><a href="#services">Services</a></li>
             <li class="nav-links"><a href="#skills">Skills</a></li>
             <li class="nav-links"><a href="#projects">Projects</a></li>
             <li class="nav-links"><a href="#contact">Contact</a></li>
         </ul>
         <div id="btn"><i class="fa-solid fa-toggle-on"></i></div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
     <!-- navbar ends here -->
 
@@ -43,7 +45,7 @@
             <a href=""><button type="submit">View my work</button></a>
         </div>
         <div class="hero-img">
-            <img src="images/img3.png" width="250px" height="320px" alt="">
+            <img src="images/mypic.png" width="400px" height="400px" alt="">
         </div>
     </div>
     <!-- hero section ends here -->
@@ -87,29 +89,29 @@
         <div class="skills">
             <h1>The skills, tools and technologies i use:</h1>
             <div class="img1">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1500" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500" 
                     data-aos-easing="ease-in-out" src="images/icons8-html-5-48.png" alt="html">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-css3-48.png" alt="css">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-javascript-48.png" alt="javascript">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-node-js-48.png" alt="react">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-figma-48.png" alt="nil">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-tailwind-css-48.png" alt="figma">
             </div>
             <div class="img2">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-visual-studio-code-2019-48.png" alt="node">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-python-48.png" alt="nil">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-bootstrap-48.png" alt="nil">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-wordpress-48.png" alt="wordpress">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-node-js-48.png" alt="nil">
             </div>
         </div>
@@ -276,21 +278,31 @@
         <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-    AOS.init({
-        duration: 1500, // animation duration in ms
-        once: true,     // whether animation should happen only once
-    });
+        AOS.init({
+            duration: 1500, // animation duration in ms
+            once: true,     // whether animation should happen only once
+        });
 
 
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navItems = document.getElementById('navItems');
+        const icon  = hamburger.querySelector('i');
 
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("navMenu");
+        hamburger.addEventListener('click', ()=>{
+            navItems.classList.toggle('active');
+            hamburger.classList.toggle('active')
 
-    // When hamburger is clicked
-    hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active"); // add/remove 'active' class
-    });
-        </script>
+            if(icon.classList.contains('fa-bars')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }else{
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
 
 </body>
 </html>

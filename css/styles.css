@@ -46,18 +46,26 @@ header {
 .navbar .nav-items .nav-links a {
     text-decoration: none;
     color: whitesmoke;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 ul li:hover{
     border-bottom: 3px dashed rgb(199, 31, 101);
 }
 .navbar .fa-solid{
-    color: rgb(51, 21, 80);
+    color: rgb(199, 31, 101);
     font-size: 40px;
 }
-.hamburger {
-    font-size: 28px;
+.navbar .hamburger{
     display: none;
+    color: white;
+    font-size: 25px;
 }
+
 /* navbar ends here */
 
 /* hero section starts here */
@@ -88,6 +96,14 @@ ul li:hover{
 .hero .hero-img {
     width: 45%;
     height: 60vh;
+}
+.hero .hero-img img{
+    border: 10px solid rgb(146, 26, 76) ;
+    border-radius: 40%;
+    -webkit-border-radius: 40%;
+    -moz-border-radius: 40%;
+    -ms-border-radius: 40%;
+    -o-border-radius: 40%;
 }
 .hero .hero-text h1 {
     font-size: 65px;
@@ -468,6 +484,7 @@ main .contact form button:hover{
 
 /* main section ends here */
 
+
 /* footer section starts here */
 
 footer {
@@ -535,232 +552,300 @@ footer .footer-container p a:hover{
     main .contact form input{
         width: 400px;
     }
+    main .service .myServices .design{
+        margin: 60px 200px;
+    }
 
 }
+/* media query for 1024px ends here */
+
+
 /* media query for 1440px */
 @media screen and (min-width: 1440px){
     main .contact form input{
         width: 700px;
     }
+    main .service .myServices .design{
+        margin: 60px 600px;
+    }
 }
+/* media query for 1440px  ends here*/
+
+
 /* media query for 768px */
 @media screen and (max-width: 768px) {
-.navbar {
-    width: 100%;
-}
-header {
-    width: 100%;
-}
-.hero {
-    width: 80%;
-    flex-wrap: wrap;
-}
-.hero .hero-text {
-    width: 100%;
-    margin: auto;
-}
-.hero .hero-img::after {
-    left: 220px;
-}
-.hero .hero-img {
-    width: 70%;
-    height: 60vh;
-    margin: auto;
-    margin-top: 30px;
-}
-.hero .hero-img img {
-    /* width: 100%; */
-}
-main {
-    width: 100%;
-}
 
-main .service .heading {
-    width: 70%;
-}
-main .service .myServices .design{
-    margin: 60px auto;
-}
-main .service .webDev::after {
-    content: "";
-    position: absolute;
-    bottom: -60px;
-    left: 300px;
-    width: 2px;
-    height: 55px;
-    background-color: rgb(148, 147, 147);
-    transform: translateX(-50%);
-}
-main .service .wordPress::after {
-    content: "";
-    position: absolute;
-    top: -60px;
-    right: 300px;
-    width: 2px;
-    height: 55px;
-    background-color: rgb(136, 133, 133);
-    transform: translateX(-50%);
-}
-main section .skills h1,
-.img1,
-.img2 {
-    width: auto;
-    height: auto;
-}
-main section .skills h1 {
-    font-size: 30px;
-}
-main section .skills .img1 img {
-    width: 50px;
-    height: 50px;
-}
-main section .skills .img2 img {
-    width: 50px;
-    height: 50px;
-}
-main .projects .my-projects1 {
-    justify-content: center;
-    align-items: center;
-}
-main .contact {
-    flex-direction: column;
-    margin: 50px auto;
-    width: 80%;
-}
-main .contact form {
-    margin-bottom: 70px;
-}
-main .contact form input{
-    width: 500px;
-}
-main .contact .contact-context h1 {
-    width: 430px;
-}
-footer .footer-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    width: auto;
-}
-footer .footer-container .footer-text{
-    width: 550px;
-}
-footer .footer-bottom {
-    width: 500px;
-}
+    /* navbar menu starts here */
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 25px;
+        color: white;
+        z-index: 1001;
+        margin: 30px;
+    }
+
+    .navbar .nav-items {
+        display: none;            
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;                
+        right: 5%;
+        width: 200px;
+        background: #222;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: right;
+        opacity: 0;             
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .navbar .nav-items li a {
+        display: block;           
+        color: white;
+        /* padding: 10px 0; */
+    }
+
+    .navbar .nav-items.active {
+        display: flex;           
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }
+    
+
+    /*navbar menu ends here */
+    .navbar {
+        width: 100%;
+    }
+    .navbar .fa-solid{
+        display: none;
+    }
+    header {
+        width: 100%;
+    }
+    .hero {
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    .hero .hero-text {
+        width: 100%;
+        margin: auto;
+    }
+    .hero .hero-img::after {
+        left: 220px;
+    }
+    .hero .hero-img {
+        width: 70%;
+        height: 60vh;
+        margin: auto;
+        margin-top: 30px;
+    }
+    main {
+        width: 100%;
+    }
+
+    main .service .heading {
+        width: 70%;
+    }
+    main .service .myServices .design{
+        margin: 60px auto;
+    }
+    main .service .webDev::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        left: 300px;
+        width: 2px;
+        height: 55px;
+        background-color: rgb(148, 147, 147);
+        transform: translateX(-50%);
+    }
+    main .service .wordPress::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: 300px;
+        width: 2px;
+        height: 55px;
+        background-color: rgb(136, 133, 133);
+        transform: translateX(-50%);
+    }
+    main section .skills h1, .img1, .img2 {
+        width: auto;
+        height: auto;
+    }
+    main section .skills h1 {
+        font-size: 30px;
+    }
+    main section .skills .img1 img {
+        width: 50px;
+        height: 50px;
+    }
+    main section .skills .img2 img {
+        width: 50px;
+        height: 50px;
+    }
+    main .projects .my-projects1 {
+        justify-content: center;
+        align-items: center;
+    }
+    main .contact {
+        flex-direction: column;
+        margin: 50px auto;
+        width: 80%;
+    }
+    main .contact form {
+        margin-bottom: 70px;
+    }
+    main .contact form input{
+        width: 500px;
+    }
+    main .contact .contact-context h1 {
+        width: 430px;
+    }
+    footer .footer-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        width: auto;
+    }
+    footer .footer-container .footer-text{
+        width: 550px;
+    }
+    footer .footer-bottom {
+        width: 500px;
+    }
 }
 
 /* media query for 320px */
-@media (min-width: 320px) and (max-width: 620px) {
-.navbar .fa-solid{
-    display: none;
-}
-header {
-    width: 100%;
-}
-header .navbar .nav-items .nav-links a {
-    display: none;
-}
-header .navbar .hamburger {
-    display: block;
-    color: white;
-}
-header .hero {
-    width: 80%;
-}
-header .hero .hero-text {
-    width: 100%;
-    margin: auto;
-}
-main {
-    width: 100%;
-}
-.hero .hero-text h1{
-    font-size: 38px;
-}
-main .service {
-    width: 100%;
-    height: auto;
-}
-main .service .heading h1 {
-    width: 120%;
-}
-main .service h1{
-    font-size: 35px;
-}
-.main .service .myServices {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hero .hero-img img{
-    width: auto;
-}
-main .service .myServices .webDev {
-    width: 282px;
-}
-main .service .myServices .wordPress::after{
-    display: none;
-}
-main .service .myServices .webDev::after{
-    display: none;
-}
-main .service .myServices .design {
-    margin:20px 500px;
-    width: 290px;
-}
-main .service .myServices .wordPress {
-    width: 282px;
-}
-main section .heading{
-    font-size: 35px;
-}
-main section .skills .img1, .img2{
-    width: auto;
-    font-size: 10px;
-}
-main section .skills {
-    width: 100%;
-}
-main .projects .my-projects1 {
-    width: 180%;
-}
-main .contact .contact-context .text{
-    font-size: 31px;
-    width: 300px;
-}
-main .contact .contact-context h2{
-    font-size: 30px;
-    width: 200px;
-}
-main .contact-context .social{
-    flex-direction: column;
-}
-main .contact{
-    width: auto;
-    margin: 12%;
-}
-main .contact form h2{
-    width: 220px;
-}
-main .contact form input{
-    width: 250%;
-}
-footer {
-    width: 100%;
-}
-footer .footer-container {
-    height: auto;
-    flex-direction: column;
-    margin: 20%;
-    width: 700px;
-    text-align: center;
-}
-footer .footer-container .footer-text{
-    flex-direction: column;
-}
-footer .footer-container .footer-logo{
-    width: 50px;
-}
+    @media (min-width: 320px) and (max-width: 620px) {
+    .navbar .fa-solid{
+        display: none;
+    }
+    header {
+        width: 100%;
+        height: 145vh;
+    }
+    .nav-items li a {
+        display: block;   
+        color: white;    
+        padding: 10px 0;
+    }
+    header .hero {
+        width: 80%;
+    }
+    header .hero .hero-text {
+        width: 100%;
+        margin: auto;
+    }
+
+
+    main {
+        width: 100%;
+    }
+    main section{
+        height: 65vh;
+    }
+    .hero .hero-text h1{
+        font-size: 38px;
+    }
+    main .service {
+        width: 100%;
+        height: 140vh;
+    }
+    main .service .heading h1 {
+        width: 120%;
+    }
+    main .service h1{
+        font-size: 35px;
+    }
+    
+    .main .service .myServices {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .hero .hero-img img{
+        width: 294px;
+        height: auto;
+        margin: 30px -50px;
+    }
+    main .service .myServices .webDev {
+        width: 282px;
+        margin: auto;
+    }
+    main .service .myServices .wordPress::after{
+        display: none;
+    }
+    main .service .myServices .webDev::after{
+        display: none;
+    }
+    main .service .myServices .design {
+        margin:45px auto;
+        width: 279px;
+        height: 200px;
+    }
+    main .service .myServices .wordPress {
+        width: 282px;
+        margin: auto;
+    }
+    main section .heading{
+        font-size: 35px;
+    }
+    main section .skills .img1, .img2{
+        width: auto;
+        font-size: 10px;
+    }
+    main section .skills {
+        width: 100%;
+    }
+    main .projects .my-projects1 {
+        width: 180%;
+    }
+    main .contact .contact-context .text{
+        font-size: 31px;
+        width: 300px;
+    }
+    main .contact .contact-context h2{
+        font-size: 30px;
+        width: 200px;
+    }
+    main .contact-context .social{
+        flex-direction: column;
+    }
+    main .contact{
+        width: auto;
+        margin: 12%;
+    }
+    main .contact form h2{
+        width: 220px;
+    }
+    main .contact form input{
+        width: 250%;
+    }
+    footer {
+        width: 100%;
+    }
+    footer .footer-container {
+        height: auto;
+        flex-direction: column;
+        margin: 25%;
+        width: 700px;
+        text-align: center;
+    }
+    footer .footer-container .footer-text{
+        flex-direction: column;
+    
+    }
+    footer .footer-container .footer-logo{
+        width: 50px;
+    }
 }
