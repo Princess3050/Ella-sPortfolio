@@ -149,9 +149,9 @@ ul li:hover{
     );
 }
 .hero .hero-text button:hover{
-    color: rgb(121, 17, 60);
-    filter: blur(0px);
-    -webkit-filter: blur(0px);
+    width: 100px;
+    height: 50px;
+    
 }
 /* hero section ends here */
 
