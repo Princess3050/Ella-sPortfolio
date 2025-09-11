@@ -19,21 +19,23 @@
         
     <!-- navbar starts here -->
     
-    <div class="navbar" id="fa-solid">
-        <div class="logo">
-            <img src="images/myLogo1.png" alt="">
+    <nav>
+        <div class="navbar" id="fa-solid">
+            <div class="logo">
+                <img src="images/myLogo1.png" alt="">
+            </div>
+            <ul class="nav-items" id="navItems">
+                <li class="nav-links"><a href="#services" class="first">Services</a></li>
+                <li class="nav-links"><a href="#skills">Skills</a></li>
+                <li class="nav-links"><a href="#projects">Projects</a></li>
+                <li class="nav-links"><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="btn" ><i class="fa-solid fa-toggle-on"></i></div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <ul class="nav-items" id="navItems">
-            <li class="nav-links"><a href="#services">Services</a></li>
-            <li class="nav-links"><a href="#skills">Skills</a></li>
-            <li class="nav-links"><a href="#projects">Projects</a></li>
-            <li class="nav-links"><a href="#contact">Contact</a></li>
-        </ul>
-        <div id="btn"><i class="fa-solid fa-toggle-on"></i></div>
-        <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
+    </nav>
     <!-- navbar ends here -->
 
 
@@ -67,7 +69,7 @@
                     <h2><span><i class="fa fa-desktop"></i></span>&nbsp;&nbsp;Website Development</h2>
                     <p>i create websites based on your ready-made design. Whether it's a landing page or a business card website , i will make it look great and work smoothly on any device</p>
                 </div>
-                <div data-aos="flip-right" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500" 
+                <div data-aos="flip-right" data-aos="fade-up"  data-aos-delay="500" 
                     data-aos-easing="ease-in-out" class="design">
                     <h2><span><i class="fa-solid fa-pen-nib"></i></span>&nbsp;&nbsp;Web Design</h2>
                     <p>i can design your website scratch i create modern ,simple and user-friendly designs that match your brands and goals</p>
@@ -89,17 +91,17 @@
         <div class="skills">
             <h1>The skills, tools and technologies i use:</h1>
             <div class="img1">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-html-5-48.png" alt="html">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-css3-48.png" alt="css">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-javascript-48.png" alt="javascript">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-node-js-48.png" alt="react">
-                <img data-aos="zoom-out" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-out" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-figma-48.png" alt="nil">
-                <img data-aos="zoom-in" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000" 
+                <img data-aos="zoom-in" data-aos="fade-up"  data-aos-delay="1000" 
                     data-aos-easing="ease-in-out" src="images/icons8-tailwind-css-48.png" alt="figma">
             </div>
             <div class="img2">
@@ -292,7 +294,7 @@
     <script>
         AOS.init({
             duration: 1500, // animation duration in ms
-            once: true,     // whether animation should happen only once
+            once: false,     // whether animation should happen only once
         });
 
 
@@ -301,6 +303,8 @@
         const hamburger = document.getElementById('hamburger');
         const navItems = document.getElementById('navItems');
         const icon  = hamburger.querySelector('i');
+        const btn = document.getElementById("btn");
+        const body = document.body;
 
         hamburger.addEventListener('click', ()=>{
             navItems.classList.toggle('active');
@@ -312,6 +316,14 @@
             }else{
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
+            }
+        });
+
+        btn.addEventListener("click", ()=>{
+            if(body.style.backgroundColor === "rgb(31, 21, 31)"){
+                body.style.backgroundColor = "black";
+            }else{
+                body.style.backgroundColor = "rgb(31, 21, 31)";
             }
         });
     </script>
